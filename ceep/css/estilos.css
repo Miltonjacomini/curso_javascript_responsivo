@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+}
+
+.cabecalho {
+    
+    background-color: #3b89da;
+}
+
+.cartao {
+    background-color: #E8E8E8;
+    margin: 16px;
+    padding: 16px;
+}
+
+.mural {
+
+}
+
+.container {
+  padding: 0 10%;
+}
