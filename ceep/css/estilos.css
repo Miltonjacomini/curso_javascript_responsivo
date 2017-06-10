@@ -1,22 +1,43 @@
-* {
-    margin: 0;
+* { margin: 0; }
+.container { padding: 0 10%; }
+
+.mural {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .cabecalho {
-    
     background-color: #3b89da;
 }
 
+@media (min-width: 590px) {
+  .cartao {
+      width: 190px;
+      display: inline-block;
+  }
+}
+
 .cartao {
-    background-color: #E8E8E8;
     margin: 16px;
     padding: 16px;
+    background-color: #E8E8E8;
+    box-sizing: border-box;
+    vertical-align: top;
+    text-align: left;
+    flex-basis: 190px;
+    flex-grow: 1;
 }
 
-.mural {
-
+.mural-linha {
+    flex-direction: column;
 }
 
-.container {
-  padding: 0 10%;
+.mural-linha .cartao {
+    width: auto;
+    display: block;
+    flex-basis: auto;
+}
+.botao-linhas {
+
 }
