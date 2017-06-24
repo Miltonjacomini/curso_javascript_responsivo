@@ -1,20 +1,24 @@
-// var botoes = document.querySelectorAll('.opcoesDoCartao-remove');
-var botoes = $('.opcoesDoCartao-remove')
+(function (){
 
-for(var i=0; i < botoes.length; i++ ){
-    // botoes[i].addEventListener("click", removeCartao);
-    botoes[i].click(removeCartao)
-}
+      'use strict'
+      // var botoes = document.querySelectorAll('.opcoesDoCartao-remove');
+      var botoes = $('.opcoesDoCartao-remove')
 
-function removeCartao(){
+      for(var i=0; i < botoes.length; i++ ){
+          // botoes[i].addEventListener("click", removeCartao);
+          botoes[i].click(removeCartao)
+      }
 
-    var cartao = document.querySelector('#cartao_'+ this.dataset.ref);
-    // var cartao = $('#cartao_'+this.dataset.ref)
+      window.removeCartao = function removeCartao(){
 
-    cartao.classList.add('cartao--some');
+          var cartao = document.querySelector('#cartao_'+ this.dataset.ref);
+          // var cartao = $('#cartao_'+this.dataset.ref)
 
-    setTimeout(function(){
-        cartao.remove();
-    }, 400)
+          cartao.classList.add('cartao--some');
 
-}
+          setTimeout(function(){
+              cartao.remove();
+          }, 400)
+
+      }
+})()

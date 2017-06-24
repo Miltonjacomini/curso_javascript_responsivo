@@ -36,6 +36,7 @@
 
 /*_ Mural _*/
 .mural {
+  font-size: 1.2rem;
   display: flex;
   flex-wrap: wrap; /* Fazer os itens quebrarem de linha fugindo do comportamento padrão do flex de tentar alinhar tudo*/
   /* Progressive enhancement */
@@ -51,7 +52,17 @@
   flex-basis: auto;
   display: block;
 }
-
+@media (min-width: 610px){
+    .mural {
+        align-items: flex-start;
+    }
+}
+@media (min-width: 900px){
+    .mural {
+        align-items: center;
+        font-size: 1.3rem;
+    }
+}
 
 #mudaLayout {
     display: none;
