@@ -6,19 +6,19 @@
 
       for(var i=0; i < botoes.length; i++ ){
           // botoes[i].addEventListener("click", removeCartao);
-          botoes[i].click(removeCartao)
+          botoes[i].click(ControllerCartao.removeCartao)
       }
 
-      window.removeCartao = function removeCartao(){
+      //window.removeCartao = function removeCartao(){
 
-          var cartao = document.querySelector('#cartao_'+ this.dataset.ref);
-          // var cartao = $('#cartao_'+this.dataset.ref)
+          //ControllerCartao.removeCartao(this.dataset.ref);
+
+          /* var cartao = document.querySelector('#cartao_'+ );
 
           cartao.classList.add('cartao--some');
 
           setTimeout(function(){
               cartao.remove();
           }, 400)
-
-      }
+          */
 })()

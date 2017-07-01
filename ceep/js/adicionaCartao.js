@@ -13,37 +13,15 @@
           var conteudo = campoTexto.val().trim().replace(/\n/g, '<br>')
 
           if(conteudo){
-
-                contador++
-
-                var buttonOpcoes = $('<button>').addClass('opcoesDoCartao-opcao')
-                                                .addClass('opcoesDoCartao-remove')
-                                                .attr('data-ref', contador)
-                                                .text('Remover')
-                                                .click(removeCartao)
-
-                var divOpcoes = $('<div>').addClass('opcoesDoCartao')
-                                          .append(buttonOpcoes)
-
-                var cartaoConteudo = $('<p>').addClass('cartao-conteudo')
-                                             .append(conteudo)
-
-                var tipoCartao = decideTipoCartao(conteudo)
-
-                var cartao = $('<div>').attr('id', 'cartao_'+ contador)
-                                       .addClass('cartao')
-                                       .addClass(tipoCartao)
-                                       .append(divOpcoes)
-                                       .append(cartaoConteudo)
-                                       .prependTo('.mural')
-
-                campoTexto.val('')
+              ControllerCartao.adicionaCartao(conteudo)
+              $(document).trigger('precisaSincronizar');
           }
+
+          campoTexto.val('')
     })
 
     function decideTipoCartao(conteudo){
 
-        debugger;
           var quebras = conteudo.split('<br>').length
 
           var totalDeLetras = conteudo.replace(/<br>/g, ' ').length
@@ -70,5 +48,6 @@
 
           return tipoCartao
     }
+    window.decideTipoCartao = decideTipoCartao
 
 })()
